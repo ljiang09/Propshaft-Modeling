@@ -43,9 +43,10 @@ L = L_inches/39.3701;    % meters
 % how to get all the J values?
 G = 77*10^9;    % this is in Pascals as well as N*m^2
 
-theta = (T*L) / (J*G);
+theta_radians = (T*L) / (J*G);
+
+theta_degrees = theta*360/(2*3.141);
 
 
 %% Storage values to compare
 % Shear stress value for the ____: 
-
