@@ -30,6 +30,6 @@ end
 % d = inner diameter, m
 
 function J = calculatePolarMoment(D, d)
+    pi = 3.141592653549623;
     J = (pi/32) * (D^4 - d^4);
 end
-
