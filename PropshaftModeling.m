@@ -50,7 +50,7 @@ shear_modulus = 25*10^9;  %  25 GPa
 G = shear_modulus;
 
 % plot the shear strength of the material
-yline(tensile_strength, 'r', 'tensile strength');
+yline(tensile_strength, 'r', 'tensile strength', 'HandleVisibility','off');
 
 
 
@@ -64,14 +64,14 @@ for D = outer_diameter_range
     for d = inner_diameter_start : increment_value : D - increment_value
         [tau, J] = TorsionalShearStress(D, d, T);
         inner_dimensions = [inner_dimensions, d];
-        torsional_shear_stresses = [torsional_shear_stresses, tau]
+        torsional_shear_stresses = [torsional_shear_stresses, tau];
         
 %         angles_of_twist = [angles_of_twist, calculateAngleOfTwist(T, J, G)];
     end
     % plot the shear stress vs the inner diameter
 %     figure(1)
-    plot(inner_dimensions, torsional_shear_stresses);
-    plot(inner_dimensions, torsional_shear_stresses, '.');
+    disp(D)
+    plot(inner_dimensions, torsional_shear_stresses, 'DisplayName', num2str(D));
     
     % plot the twist (DOENST WORK RN)
 %     figure(2)
@@ -84,7 +84,7 @@ end
 title('Torsional shear stress of various inner/outer dimensions.')
 xlabel('Inner dimension, inches');
 ylabel('Torsional shear stress, N/m^2 or Pa');
-% legend('0.25 : 0.125 : 4.0');
+legend show
 
 
 % figure(2)
