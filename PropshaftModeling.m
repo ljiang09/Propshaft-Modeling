@@ -94,7 +94,7 @@ end
 
 % figure(1)
 title('Torsional shear stress based on inner/outer dimensions.')
-xlabel('Inner dimension, inches');
+xlabel('Inner diameter, inches');
 ylabel('Torsional shear stress, N/m^2 or Pa');
 legend show
 
