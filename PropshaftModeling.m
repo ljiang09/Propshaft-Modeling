@@ -35,7 +35,7 @@ for D = outer_diameter_range
     angles_of_twist = [];
     inner_dimensions = [];
     for d = inner_diameter_start : increment_value : D - increment_value
-        [tau, J] = TorsionalShearStress(T, D, d);
+        [tau, J] = TorsionalShearStress(D, d, T);
         inner_dimensions = [inner_dimensions, d];
         torsional_shear_stresses = [torsional_shear_stresses, tau];
         
